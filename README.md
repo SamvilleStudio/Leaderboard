@@ -17,19 +17,16 @@ A flexible leaderboard system for Unity that saves player scores using a JSON fi
 
 ## 🛠️ How to Use
 
-1. **Attach Scripts:**
-   - `LeaderboardManager.cs` → Empty GameObject (e.g., "GameManager")
-   - `UIPlayerNameInput.cs` → UI Handler (with InputField + optional warning text)
+1. **Drag and Drop Prefabs to Scene:**
+   - `LeaderboardManager` is a singleton and will persists between scenes
+   - `UI Player Input Field` handles the player name input field and button submission
+   - `UI Leaderboard` handles displaying the top 10 high scores
 
-2. **Set References in Inspector:**
-   - `LeaderboardManager`: Assign `leaderboardDisplay` (Text)
-   - `UIPlayerNameInput`: Assign `nameInputField` and `warningText`
+2. **Call Methods:**
+   - `UIPlayerNameInput.SubmitScore()` → Submits name + current score
+   - `LeaderboardManager.Instance.CurrentScore` → Set this from your game logic when the session ends
 
-3. **Call Methods:**
-   - `UIPlayerNameInput.SubmitNameAndScore()` → Submits name + current score
-   - `LeaderboardManager.Instance.currentScore` → Set this from your game logic when the session ends
-
-4. **Optional Debug Tools:**
+3. **Optional Debug Tools:**
    - `LeaderboardManager → Generate Dummy Scores` (via Inspector context menu)
    - `LeaderboardManager.ClearLeaderboard()` to reset
 
@@ -71,5 +68,4 @@ This project was developed for a Samville Studio and serves as an educational re
 
 Developed by
 1. Rizaldy Saputra Dharma Winata
-
 ---
